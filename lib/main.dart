@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
-              title: Text('Title',
+              title: Text('App',
                 style: TextStyle(
                     color: Colors.white),
               ),
