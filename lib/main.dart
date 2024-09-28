@@ -13,13 +13,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Title',
-            style: TextStyle(
-                color:Colors.white),
+          appBar: AppBar(
+              title: Text('Title',
+                style: TextStyle(
+                    color: Colors.white),
+              ),
+              backgroundColor: Colors.amber
           ),
-          backgroundColor: Colors.amber
-        ),
+          /*
           body:SingleChildScrollView(
             child: Column(
               children: [
@@ -60,10 +61,42 @@ class MyApp extends StatelessWidget {
                 ),
               ],
             )
+          )*/
+          body: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Container(
+                child: Row(
+                  children: [
+                    Container(
+                      width: 100,
+                      height: 100,
+                      color: Colors.blue,
+                    ),
+                    Container(
+                      width: 100,
+                      height: 100,
+                      color: Colors.green,
+                    ),
+                    Container(
+                        width: 100,
+                        height: 100,
+                        color: Colors.purple
+                    ),
+                    Container(
+                        width: 100,
+                        height: 100,
+                        color: Colors.brown
+                    ),
+                    Container(
+                        width: 100,
+                        height: 100,
+                        color: Colors.purple
+                    ),
+                  ],
+                )
           )
-
-            ),
-      );
-
+          )
+      ),
+    );
   }
 }
