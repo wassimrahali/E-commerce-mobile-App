@@ -4,98 +4,130 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+
+class _MyAppState extends State<MyApp> {
+  GlobalKey<FormState> field = GlobalKey<FormState>();
+  GlobalKey<FormState>_field = GlobalKey<FormState>();
+  void _validator(){
+    if(field.currentState!.validate()){
+      print("form is valid");
+    }else{
+      print("form isnot valid");
+    }
+  }
+  void _verifta3nam(){
+    if(_field.currentState!.validate()){
+      print('ezab');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-              title: Text('App',
-                style: TextStyle(
-                    color: Colors.white),
-              ),
-              backgroundColor: Colors.amber
+        drawer: Drawer(
+          backgroundColor: Colors.blue,
+          child: ListView(
+            children: [
+              ListTile(
+            title: const Text('Item 1'),
+            onTap: () {
+              // Update the state of the app.
+              // ...
+            },
           ),
-          /*
-          body:SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.blue,
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.green,
-                ),
-                Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.purple
-                ),
-                Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.purple
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.blue,
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.green,
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                  color: Colors.red,
-                ),
-              ],
-            )
-          )*/
-          body: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Container(
-                child: Row(
+              ListTile(
+                title: const Text('Item 1'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+              ListTile(
+                title: const Text('Item 1'),
+                onTap: () {
+                  // Update the state of the app.
+                  // ...
+                },
+              ),
+
+            ],
+          ),
+        ),
+        appBar: AppBar(
+          leading: Builder(builder:(context){
+            return IconButton(
+              icon:const Icon(Icons.account_balance),onPressed: (){
+              Scaffold.of(context).openDrawer();
+            }, );
+
+          }),
+          shadowColor: Colors.grey,
+          title: Text('Home',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900,),),
+          backgroundColor: Colors.red,
+          centerTitle: true,
+          elevation: 20,
+          actions: [
+            Icon(Icons.next_plan,color: Colors.white,)
+          ],
+
+        ),
+
+
+        body: Container(
+          child: Column(
+            children: [
+              Container(
+                child: Column(
                   children: [
-                    Container(
-                      width: 100,
-                      height: 100,
+                    Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Form(
+                          key: field,
+                          child: TextFormField(
+                            validator: (value) {
+                              if(value!.isEmpty){
+                                return 'please correct it max 8';
+                              }
+                              return null;
+                            },
+                          )
+                      ),
+                    ),
+                    MaterialButton(onPressed: _validator,
+                      textColor: Colors.white,
                       color: Colors.blue,
-                    ),
-                    Container(
-                      width: 100,
-                      height: 100,
-                      color: Colors.green,
-                    ),
-                    Container(
-                        width: 100,
-                        height: 100,
-                        color: Colors.purple
-                    ),
-                    Container(
-                        width: 100,
-                        height: 100,
-                        color: Colors.brown
-                    ),
-                    Container(
-                        width: 100,
-                        height: 100,
-                        color: Colors.purple
-                    ),
+                      child: Text('data'),)
                   ],
-                )
+                ),
+              ),
+              Container(
+                child:Form(
+                  key: _field,
+                  child:TextFormField(
+                  validator: (value) {
+                    if(value!.length<7){
+                      return 'ezibb zab zebi';
+                    }
+                    return null ;
+                  },
+                ),
+                ),
+              ),
+              MaterialButton(onPressed: _verifta3nam,
+              child: Text('Nam'),)
+            ],
           )
-          )
+        ),
       ),
     );
   }
