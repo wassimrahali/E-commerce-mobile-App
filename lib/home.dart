@@ -52,86 +52,120 @@ class _HomeState extends State<Home> {
               Container(height: 10),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
+                child: Container(
+                  height: 300,
+                  child: Container(
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(100)),
-                          child: const Icon(
-                            Icons.laptop,
-                            size: 40,
-                          ),
+                        Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(20),
+                              margin: EdgeInsets.only(right: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(100)),
+                              child: const Icon(
+                                Icons.laptop,
+                                size: 30,
+                              ),
+                            ),
+                            Container(height: 8),
+                            const Text(
+                              'Laptop',
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                          ],
                         ),
-                        Container(height: 8),
-                        const Text(
-                          'Laptop',
-                          style: TextStyle(fontWeight: FontWeight.w500),
+                        Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(20),
+                              margin: EdgeInsets.only(right: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(100)),
+                              child: const Icon(
+                                Icons.phone_android,
+                                size: 30,
+                              ),
+                            ),
+                            Container(height: 8),
+                            const Text(
+                              'Mobile',
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                          ],
                         ),
+                        Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(20),
+                              margin: EdgeInsets.only(right: 10),
+
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(100)),
+                              child: const Icon(
+                                Icons.local_offer_rounded,
+                                size: 30,
+                              ),
+                            ),
+                            Container(height: 8),
+                            const Text(
+                              'Clothes',
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(20),
+                              margin: EdgeInsets.only(right: 10),
+
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(100)),
+                              child: const Icon(
+                                Icons.electric_bolt_rounded,
+                                size: 30,
+                              ),
+                            ),
+                            Container(height: 8),
+                            const Text(
+                              'Electronics',
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(20),
+                              margin: EdgeInsets.only(right: 10),
+
+                              decoration: BoxDecoration(
+                                  color: Colors.grey[200],
+                                  borderRadius: BorderRadius.circular(100)),
+                              child: const Icon(
+                                Icons.directions_bike_outlined,
+                                size: 30,
+                              ),
+                            ),
+                            Container(height: 8),
+                            const Text(
+                              'Bike',
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+
+
                       ],
                     ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(100)),
-                          child: const Icon(
-                            Icons.phone_android,
-                            size: 40,
-                          ),
-                        ),
-                        Container(height: 8),
-                        const Text(
-                          'Mobile',
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(100)),
-                          child: const Icon(
-                            Icons.local_offer_rounded,
-                            size: 40,
-                          ),
-                        ),
-                        Container(height: 8),
-                        const Text(
-                          'Clothes',
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(100)),
-                          child: const Icon(
-                            Icons.electric_bolt_rounded,
-                            size: 40,
-                          ),
-                        ),
-                        Container(height: 8),
-                        const Text(
-                          'Electronics',
-                          style: TextStyle(fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    ),
-                  ],
+                  ),
                 ),
               )
             ],
