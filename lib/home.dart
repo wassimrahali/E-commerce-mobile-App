@@ -44,11 +44,12 @@ class _HomeState extends State<Home> {
                   )
                 ],
               ),
-              Container(height: 30),
+              Container(height: 20),
               const Text(
                 "Categories",
                 style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
               ),
+              Container(height: 10),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
