@@ -26,6 +26,15 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        iconSize: 40,
+          selectedItemColor: Colors.orange,
+          items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.home),label: '*',backgroundColor: Colors.red),
+        BottomNavigationBarItem(icon: Icon(Icons.shopping_bag),label: '*'),
+        BottomNavigationBarItem(icon: Icon(Icons.person),label: '*'),
+
+      ]),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: ListView(
