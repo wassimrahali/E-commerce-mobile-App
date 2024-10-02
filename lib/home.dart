@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         iconSize: 40,
-          selectedItemColor: Colors.orange,
+          selectedItemColor: Colors.blueAccent,
           items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home),label: '*',backgroundColor: Colors.red),
         BottomNavigationBarItem(icon: Icon(Icons.shopping_bag),label: '*'),
@@ -147,7 +147,7 @@ class _HomeState extends State<Home> {
                         Container(height: 30,),
                         Text(
                           '\$${bestSellingProducts[index]['price'].toString()}',
-                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.orangeAccent),
+                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.blueAccent),
                         ),
                       ],
                     ),
