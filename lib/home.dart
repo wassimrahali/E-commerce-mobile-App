@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hey/details.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -123,28 +124,33 @@ class _HomeState extends State<Home> {
               ),
               itemCount: bestSellingProducts.length,
               itemBuilder: (context, index) {
-                return Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        color: Colors.grey[200],
-                        child: Image.asset(bestSellingProducts[index]['image']),
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        bestSellingProducts[index]['name'],
-                        style: const TextStyle(fontWeight: FontWeight.w600),
-                      ),
-                      Text(
-                        bestSellingProducts[index]['description'],
-                        style: const TextStyle(color: Colors.grey, fontWeight: FontWeight.w400),
-                      ),
-                      Container(height: 30,),
-                      Text(
-                        '\$${bestSellingProducts[index]['price'].toString()}',
-                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.orangeAccent),
-                      ),
-                    ],
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> prouductDetails(dataItems:bestSellingProducts[index],)));
+                  },
+                  child: Card(
+                    child: Column(
+                      children: [
+                        Container(
+                          color: Colors.grey[200],
+                          child: Image.asset(bestSellingProducts[index]['image']),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          bestSellingProducts[index]['name'],
+                          style: const TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          bestSellingProducts[index]['description'],
+                          style: const TextStyle(color: Colors.grey, fontWeight: FontWeight.w400),
+                        ),
+                        Container(height: 30,),
+                        Text(
+                          '\$${bestSellingProducts[index]['price'].toString()}',
+                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.orangeAccent),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },
