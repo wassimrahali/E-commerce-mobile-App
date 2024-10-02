@@ -133,7 +133,7 @@ class _HomeState extends State<Home> {
                       Container(height: 30,),
                       Text(
                         '\$${bestSellingProducts[index]['price'].toString()}',
-                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.orangeAccent),
                       ),
                     ],
                   ),
